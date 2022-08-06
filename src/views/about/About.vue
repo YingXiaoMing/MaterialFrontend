@@ -3,7 +3,7 @@
 	import { useStore } from 'vuex'
 	import { storeToRefs  } from 'pinia'
 	import { usePiniaState } from '@/store/testPinia'
-
+	import { useRouter } from 'vue-router'
 	import logo from '@/assets/logo.png'
 
 	// vuex
@@ -11,6 +11,19 @@
 
 	// pinia
 	const piniaStore = usePiniaState()
+
+	const router = useRouter()
+
+
+	// 跳转路由页面
+
+	let JumpPage = function(name:string) {
+		router.push({
+			name
+		});
+	}
+
+
 
 	// vuex
 	// const  userName  = computed(() => vuexStore.state.userNmae)
@@ -33,25 +46,28 @@
 <template>
 	<div class="about">
 		<div class="user-row flex-start">
-			<img src="/src/assets/me/HeadPortrait.png" />
-			<div style="margin-left: 12px">
-				<div class="user_name">131****8652</div>
-				<div class="user_phone">131****8652</div>
-			</div>
+			<img src="/src/assets/me/banner.jpg" />
 		</div>
 		<div class="width-100"></div>
 		<div class="module-content">
 			<div class="flex-between">
-				<img class="module-icon" src="/src/assets/me/account.png"/>
-				<div class="flex-between module-item">
-					<span>账套信息</span>
+				<van-icon name="user-o" class="module-icon"/>
+				<div class="flex-between module-item" @click="JumpPage('Info')">
+					<span>我的信息</span>
 					<img style="width: 8px" src="/src/assets/me/arrow.png" />
 				</div>
 			</div>
 			<div class="flex-between">
-				<img class="module-icon" src="/src/assets/me/set.png"/>
+				<van-icon name="bullhorn-o" class="module-icon"/>
+				<div class="flex-between module-item" @click="JumpPage('Msg')">
+					<span>通知</span>
+					<img style="width: 8px" src="/src/assets/me/arrow.png" />
+				</div>
+			</div>
+			<div class="flex-between">
+				<van-icon name="shield-o" class="module-icon"/>
 				<div class="flex-between module-item">
-					<span>账号设置</span>
+					<span>在线支持</span>
 					<img style="width: 8px" src="/src/assets/me/arrow.png" />
 				</div>
 			</div>
@@ -71,8 +87,10 @@
 .module-content {
 	padding: 0px 16px;
 	.module-icon {
+		font-size: 22px;
+		line-height: 24px;
 		width: 24px;
-		margin-right: 6px;
+		margin-right: 12px;
 		height: 24px;
 	}
 	.module-item {
@@ -89,13 +107,15 @@
 	}
 }
 .user-row {
-	padding: 20px 14px 20px;
-	border-bottom: 7px solid rgba(76,217,100,.04);
+	// padding: 20px 14px 20px;
+	// border-bottom: 7px solid rgba(76,217,100,.04);
 	img {
-		width: 55px;
-		height: 55px;
-		border-radius: 50%;
-		margin-bottom: 14px;
+		width: 100%;
+		height: 100%;
+		// width: 55px;
+		// height: 268px;
+		// border-radius: 50%;
+		// margin-bottom: 14px;
 		border: none;
 	}
 	.user_name {

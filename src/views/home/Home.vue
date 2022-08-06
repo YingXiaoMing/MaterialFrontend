@@ -15,14 +15,10 @@ import HomeHeader from './HomeHeader.vue'
 	const useShowList = () => {
 		const state = reactive({
 			list: [
-				{title: '关键指标', src: d1},
-				{title: '资金', src: d2},
-				{title: '费用', src: d3},
-				{title: '往来', src: d4},
-				{title: '资金负债表', src: d5},
-				{title: '利润表', src: d6},
-				{title: '科目余额表', src: d7},
-				{title: '明细账', src: d8},
+				{title: '进厂捡斤', src: d1},
+				{title: '出厂捡斤', src: d4},
+				{title: '厂内捡斤', src: d5},
+				
 			]
 		})
 		return toRefs(state)
@@ -40,22 +36,10 @@ import HomeHeader from './HomeHeader.vue'
 				<van-image width="100rem" :src="logo" />
 			</div>
 		</div>
-		<div>
-			<van-row gutter="22" class="dashboard-menu">
-				<template v-for="(item, index) in list" :key="index">
-					<van-col span="6">
-						<div class="dashboard-menu-item">
-							<van-image width="38px" height="38px" :src="item.src"></van-image>
-							<div class="vudz-font-size-13">{{ item.title }}</div>
-						</div>
-					</van-col>
-				</template>
-			</van-row>
-		</div>
 		<div class="dashboard-key-container">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
-					关键指标<span class="dz_text">(2022年的本年累计数据)</span>
+					生产情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
@@ -64,24 +48,144 @@ import HomeHeader from './HomeHeader.vue'
 			</div>
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
-					<p>营业收入(元)</p>
+					<p>生铁日产量</p>
 					<div class="dashboard-key-item-title">306,797.50</div>
 				</div>
 				<div class="dashboard-key-item bg2">
-					<p>销售费用(元)</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg3">
-					<p>管理费用(元)</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
-				</div>
-				<div class="dashboard-key-item bg4">
-					<p>财务费用(元)</p>
+					<p>生铁月产量</p>
 					<div class="dashboard-key-item-title">0.00</div>
 				</div>
 			</div>
-			
 		</div>
+		<div class="dashboard-key-container">
+			<div class="flex-between dashboard-key-header">
+				<div class="dz-font-size-15 dz-font-bold">
+					销售情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
+				</div>
+				<div class="flex-between">
+					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
+					<van-image width="6px" height="6px" src="/src/assets/home/more.png"></van-image>
+				</div>
+			</div>
+			<div class="flex-between dashboard-key">
+				<div class="dashboard-key-item bg1">
+					<p>生铁日销量</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>生铁月销量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg3">
+					<p>水渣日销量</p>
+					<div class="dashboard-key-item-title">97,591.00</div>
+				</div>
+				<div class="dashboard-key-item bg4">
+					<p>水渣月销量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg1">
+					<p>当日新签合同个数（个）</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>当日新签合同重量（kg）</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg3">
+					<p>当日新签合同个数（个）</p>
+					<div class="dashboard-key-item-title">97,591.00</div>
+				</div>
+				<div class="dashboard-key-item bg4">
+					<p>当日新签合同重量（kg）</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg1">
+					<p>当日回款（元）</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>当月回款（元）</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+			</div>
+		</div>
+		<div class="dashboard-key-container">
+			<div class="flex-between dashboard-key-header">
+				<div class="dz-font-size-15 dz-font-bold">
+					采购情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
+				</div>
+				<div class="flex-between">
+					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
+					<van-image width="6px" height="6px" src="/src/assets/home/more.png"></van-image>
+				</div>
+			</div>
+			<div class="flex-between dashboard-key">
+				<div class="dashboard-key-item bg1">
+					<p>当日矿粉到车数量</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>当日矿粉到车重量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg3">
+					<p>当月矿粉到车数量</p>
+					<div class="dashboard-key-item-title">97,591.00</div>
+				</div>
+				<div class="dashboard-key-item bg4">
+					<p>当月矿粉到车重量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg1">
+					<p>当日焦炭到车数量</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>当日焦炭到车重量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg3">
+					<p>当月焦炭到车数量</p>
+					<div class="dashboard-key-item-title">97,591.00</div>
+				</div>
+				<div class="dashboard-key-item bg4">
+					<p>当日焦炭到车数量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg1">
+					<p>当日其它到车数量</p>
+					<div class="dashboard-key-item-title">306,797.50</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<p>当日其它到车重量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+				<div class="dashboard-key-item bg3">
+					<p>当月其它到车数量</p>
+					<div class="dashboard-key-item-title">97,591.00</div>
+				</div>
+				<div class="dashboard-key-item bg4">
+					<p>当日其它到车数量</p>
+					<div class="dashboard-key-item-title">0.00</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div>
+			<van-row gutter="22" class="dashboard-menu">
+				<template v-for="(item, index) in list" :key="index">
+					<van-col span="8">
+						<div class="dashboard-menu-item">
+							<van-image width="38px" height="38px" :src="item.src"></van-image>
+							<div class="vudz-font-size-13">{{ item.title }}</div>
+						</div>
+					</van-col>
+				</template>
+			</van-row>
+		</div>
+		
 	</div>
 </template>
 
@@ -104,6 +208,7 @@ import HomeHeader from './HomeHeader.vue'
   }
   .dashboard-menu {
 	  margin: 0 0.5rem;
+	  margin-bottom: 50px;
 	  .dashboard-menu-item {
 		  line-height: 14px;
 		  margin-bottom: 18px;
@@ -127,6 +232,7 @@ import HomeHeader from './HomeHeader.vue'
 		  p {
 			  font-size: 13px;
 			  color: grey;
+			  font-weight: 300;
 		  }
 		  .dashboard-key-item-title {
 			  color: rgb(26, 40, 60);

@@ -6,11 +6,18 @@ const useTabBar = () => {
     const state = reactive({
         tabBar: [
 			{
-				title: '首页',
+				title: '产销',
 				to: {
 					name: 'Home'
 				},
 				icon: 'home-o'
+			},
+			{
+				title: '技经',
+				to: {
+					name: 'Technical'
+				},
+				icon: 'user-o'
 			},
 			{
 				title: '我的',

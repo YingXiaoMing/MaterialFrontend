@@ -7,13 +7,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-
-
     const visible = ref(false);
-
-
-
-
 </script>
 
 <template>
@@ -22,17 +16,12 @@ export default {
             <template #title>
                 <div class="flex-center header_container">
                     <img class="header_img" src="/src/assets/home/header.png"/>
-                    <span class="header_title">xx超市</span>
-                    <img class="header_arrow" src="/src/assets/home/header_arrow.png">
+                    <span class="header_title">辽宁高端金属材料有限公司</span>
                 </div>
             </template>
         </van-nav-bar>
     </van-sticky>
-    <van-action-sheet v-model:show="visible">
-        <div class="content">是我爱得太过天真</div>
-    </van-action-sheet>
-
-
+   
 </template>
 <style lang="scss" scoped>
 
@@ -46,6 +35,7 @@ export default {
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 16px;
+    margin-top: 3px;
 }
 .header_arrow {
     width: 10px;
