@@ -1,0 +1,20 @@
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.dz-font-size-15 {
+    font-size: 15px;
+}
+.dz-font-size-12 {
+    font-size: 12px;
+}
+.dz-font-bold {
+    font-weight: bold;
+}
