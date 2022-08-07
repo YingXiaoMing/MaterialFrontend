@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { computed, reactive, ref, toRefs } from 'vue'
-	
-	import logo from '@/assets/banner.png'
+	import { useRouter } from 'vue-router'
+	import logo from '@/assets/me/banner.jpg'
 	import d1 from '@/assets/home/d1.png'
 	import d2 from '@/assets/home/d2.png'
 	import d3 from '@/assets/home/d3.png'
@@ -10,8 +10,14 @@
 	import d6 from '@/assets/home/d6.png'
 	import d7 from '@/assets/home/d7.png'
 	import d8 from '@/assets/home/d8.png'
-import HomeHeader from './HomeHeader.vue'
+	import HomeHeader from './HomeHeader.vue'
+	const router = useRouter()
 
+	let JumpPage = function(name:string) {
+		router.push({
+			name
+		});
+	}
 	const useShowList = () => {
 		const state = reactive({
 			list: [
@@ -33,10 +39,10 @@ import HomeHeader from './HomeHeader.vue'
 		<!-- <CustomHeader title="XX超市" /> -->
 		<div class="py-3 px-3">
 			<div class="title py-2 flex-start align-items-center">
-				<van-image width="100rem" :src="logo" />
+				<van-image width="100rem" :src="logo" radius="10px"/>
 			</div>
 		</div>
-		<div class="dashboard-key-container">
+		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
 					生产情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
