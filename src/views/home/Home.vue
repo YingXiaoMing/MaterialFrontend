@@ -21,9 +21,9 @@
 	const useShowList = () => {
 		const state = reactive({
 			list: [
-				{title: '进厂捡斤', src: d1},
-				{title: '出厂捡斤', src: d4},
-				{title: '厂内捡斤', src: d5},
+				{title: '进厂捡斤', src: d1, name: 'Solution'},
+				{title: '出厂捡斤', src: d4, name: 'Detail'},
+				{title: '厂内捡斤', src: d5, name: ''},
 				
 			]
 		})
@@ -199,7 +199,7 @@
 		<div>
 			<van-row gutter="22" class="dashboard-menu">
 				<template v-for="(item, index) in list" :key="index">
-					<van-col span="8">
+					<van-col span="8" @click="JumpPage(item.name)">
 						<div class="dashboard-menu-item">
 							<van-image width="38px" height="38px" :src="item.src"></van-image>
 							<div class="vudz-font-size-13">{{ item.title }}</div>
