@@ -45,7 +45,7 @@
 		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
-					生产情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
+					生产情况<span class="dz_text">(截止2022/08/09最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
@@ -55,18 +55,18 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日产量</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
+					<div class="dashboard-key-item-title">1800</div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月产量</p>
-					<div class="dashboard-key-item-title">0.00</div>
+					<div class="dashboard-key-item-title">15789.84</div>
 				</div>
 			</div>
 		</div>
 		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
-					销售情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
+					销售情况<span class="dz_text">(截止2022/08/09最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
@@ -76,50 +76,55 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日销量</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
+					<div class="dashboard-key-item-title">2300</div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月销量</p>
-					<div class="dashboard-key-item-title">0.00</div>
+					<div class="dashboard-key-item-title">14756.66</div>
 				</div>
 				<div class="dashboard-key-item bg3">
 					<p>水渣日销量</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
+					<div class="dashboard-key-item-title">1603.25</div>
 				</div>
 				<div class="dashboard-key-item bg4">
 					<p>水渣月销量</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg1">
-					<p>当日新签合同个数（个）</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
-				</div>
-				<div class="dashboard-key-item bg2">
-					<p>当日新签合同重量（kg）</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg3">
-					<p>当日新签合同个数（个）</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
-				</div>
-				<div class="dashboard-key-item bg4">
-					<p>当日新签合同重量（kg）</p>
-					<div class="dashboard-key-item-title">0.00</div>
+					<div class="dashboard-key-item-title">13898.88</div>
 				</div>
 				<div class="dashboard-key-item bg1">
 					<p>当日回款（元）</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
+					<div class="dashboard-key-item-title">3,000,000</div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>当月回款（元）</p>
-					<div class="dashboard-key-item-title">0.00</div>
+					<div class="dashboard-key-item-title">35,000,000</div>
 				</div>
+				<div class="dashboard-key-item bg3 big">
+					<div>
+						<p>当日新签合同个数（个）</p>
+						<div class="dashboard-key-item-title">3</div>
+					</div>
+					<div>
+						<p>当日新签合同重量（kg）</p>
+						<div class="dashboard-key-item-title">5000</div>
+					</div>
+				</div>
+				<div class="dashboard-key-item bg4 big">
+					<div>
+						<p>当月新签合同个数（个）</p>
+						<div class="dashboard-key-item-title">16</div>
+					</div>
+					<div>
+						<p>当月新签合同重量（kg）</p>
+						<div class="dashboard-key-item-title">97,591</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
-					采购情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
+					采购情况<span class="dz_text">(截止2022/08/09最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
@@ -127,53 +132,67 @@
 				</div>
 			</div>
 			<div class="flex-between dashboard-key">
-				<div class="dashboard-key-item bg1">
-					<p>当日矿粉到车数量</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
+				<div class="dashboard-key-item bg1 big">
+					<div>
+						<p>当日矿粉到车数量(车)</p>
+						<div class="dashboard-key-item-title">30</div>
+					</div>
+					<div>
+						<p>当日矿粉到车重量(kg)</p>
+						<div class="dashboard-key-item-title">1800</div>
+					</div>
+					
 				</div>
-				<div class="dashboard-key-item bg2">
-					<p>当日矿粉到车重量</p>
-					<div class="dashboard-key-item-title">0.00</div>
+				<div class="dashboard-key-item bg2 big">
+					<div>
+						<p>当月矿粉到车数量(车)</p>
+						<div class="dashboard-key-item-title">300</div>
+					</div>
+					<div>
+						<p>当月矿粉到车重量(kg)</p>
+						<div class="dashboard-key-item-title">18000</div>
+					</div>
 				</div>
-				<div class="dashboard-key-item bg3">
-					<p>当月矿粉到车数量</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
+				<div class="dashboard-key-item bg3 big">
+					<div>
+						<p>当日焦炭到车数量(车)</p>
+						<div class="dashboard-key-item-title">15</div>
+					</div>
+					<div>
+						<p>当日焦炭到车重量(kg)</p>
+						<div class="dashboard-key-item-title">500</div>
+					</div>
+					
 				</div>
-				<div class="dashboard-key-item bg4">
-					<p>当月矿粉到车重量</p>
-					<div class="dashboard-key-item-title">0.00</div>
+				<div class="dashboard-key-item bg4 big">
+					<div>
+						<p>当月焦炭到车数量(车)</p>
+						<div class="dashboard-key-item-title">150</div>
+					</div>
+					<div>
+						<p>当月焦炭到车重量(kg)</p>
+						<div class="dashboard-key-item-title">1600</div>
+					</div>
 				</div>
-				<div class="dashboard-key-item bg1">
-					<p>当日焦炭到车数量</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
+				<div class="dashboard-key-item bg1 big">
+					<div>
+						<p>当日其它到车数量(车)</p>
+						<div class="dashboard-key-item-title">10</div>
+					</div>
+					<div>
+						<p>当日其它到车重量(kg)</p>
+						<div class="dashboard-key-item-title">400</div>
+					</div>
 				</div>
-				<div class="dashboard-key-item bg2">
-					<p>当日焦炭到车重量</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg3">
-					<p>当月焦炭到车数量</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
-				</div>
-				<div class="dashboard-key-item bg4">
-					<p>当日焦炭到车数量</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg1">
-					<p>当日其它到车数量</p>
-					<div class="dashboard-key-item-title">306,797.50</div>
-				</div>
-				<div class="dashboard-key-item bg2">
-					<p>当日其它到车重量</p>
-					<div class="dashboard-key-item-title">0.00</div>
-				</div>
-				<div class="dashboard-key-item bg3">
-					<p>当月其它到车数量</p>
-					<div class="dashboard-key-item-title">97,591.00</div>
-				</div>
-				<div class="dashboard-key-item bg4">
-					<p>当日其它到车数量</p>
-					<div class="dashboard-key-item-title">0.00</div>
+				<div class="dashboard-key-item bg2 big">
+					<div>
+						<p>当月其它到车数量(车)</p>
+						<div class="dashboard-key-item-title">120</div>
+					</div>
+					<div>
+						<p>当日其它到车重量(kg)</p>
+						<div class="dashboard-key-item-title">6760</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -233,6 +252,9 @@
 		  margin-bottom: 4px;
 		  background-repeat: no-repeat;
 		  background-size: cover;
+		  &.big {
+			height: 98px;
+		  }
 		  p {
 			  font-size: 13px;
 			  color: grey;
