@@ -22,14 +22,23 @@ const rootRoutes = Object.keys(mainRouterModules).map((path) => {
 		return {
 			path: '/',
 			name,
-			redirect: '/home',
+			redirect: '/login',
 			component: mainRouterModules[path],
 			children: childRoutes
 		};
     }
+	return {
+		path: '/login',
+		name,
+		component: mainRouterModules[path],
+	}
+	
+
+
 })
 
 const routes: Array<RouteRecordRaw> = rootRoutes
+console.log(rootRoutes)
 
 const router = createRouter({
     history: createWebHashHistory(),

@@ -49,7 +49,7 @@
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
-					<van-image width="6px" height="6px" src="/src/assets/home/more.png"></van-image>
+					<van-icon name="arrow" />
 				</div>
 			</div>
 			<div class="flex-between dashboard-key">
@@ -63,14 +63,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="dashboard-key-container">
+		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
 					销售情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
-					<van-image width="6px" height="6px" src="/src/assets/home/more.png"></van-image>
+					<van-icon name="arrow" />
 				</div>
 			</div>
 			<div class="flex-between dashboard-key">
@@ -116,14 +116,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="dashboard-key-container">
+		<div class="dashboard-key-container" @click="JumpPage('Product')">
 			<div class="flex-between dashboard-key-header">
 				<div class="dz-font-size-15 dz-font-bold">
 					采购情况<span class="dz_text">(截止2022/08/06最新的数据)</span>
 				</div>
 				<div class="flex-between">
 					<div class="dz-font-size-12" style="color: rgb(178, 179, 193);">更多</div>
-					<van-image width="6px" height="6px" src="/src/assets/home/more.png"></van-image>
+					<van-icon name="arrow" />
 				</div>
 			</div>
 			<div class="flex-between dashboard-key">
@@ -177,8 +177,6 @@
 				</div>
 			</div>
 		</div>
-
-
 		<div>
 			<van-row gutter="22" class="dashboard-menu">
 				<template v-for="(item, index) in list" :key="index">
