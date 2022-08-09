@@ -1,8 +1,9 @@
 <template>
     <div>
-        <CustomHeader title="" />
-        <DetailHeader/>
+        
         <div class="view-container">
+            <CustomHeader title="" />
+            <DetailHeader/>
             <div class="view-table">
                 <div class="view-table-td bold">
                     <div class="td-cell cell-20">铁次</div>

@@ -1,6 +1,7 @@
 <template>
-    <CustomHeader title="" />
+    
     <div class="view-container">
+        <CustomHeader title="" />
         <div ref="product22" :style="{ width: '100%', height: '300px' }"></div>
         <div class="view-table">
             <div class="view-table-td bold">

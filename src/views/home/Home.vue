@@ -23,7 +23,7 @@
 			list: [
 				{title: '进厂捡斤', src: d1, name: 'Solution'},
 				{title: '出厂捡斤', src: d4, name: 'Detail'},
-				{title: '厂内捡斤', src: d5, name: ''},
+				{title: '厂内捡斤', src: d5, name: 'Interval'},
 				
 			]
 		})
