@@ -11,8 +11,8 @@
 	import d7 from '@/assets/home/d7.png'
 	import d8 from '@/assets/home/d8.png'
 	import HomeHeader from './HomeHeader.vue'
+	import { CountTo  } from 'vue3-count-to'
 	const router = useRouter()
-
 	let JumpPage = function(name:string) {
 		router.push({
 			name
@@ -35,11 +35,9 @@
 
 <template>
 	<div>
-		<HomeHeader></HomeHeader>
-		<!-- <CustomHeader title="XX超市" /> -->
-		<div class="py-3 px-3">
+		<div class="py-1 px-3">
 			<div class="title py-2 flex-start align-items-center">
-				<van-image width="100rem" :src="logo" radius="10px"/>
+				<van-image width="100rem" height="4.2rem" :src="logo" radius="10px"/>
 			</div>
 		</div>
 		<div class="dashboard-key-container" @click="JumpPage('Product')">
@@ -55,11 +53,11 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日产量</p>
-					<div class="dashboard-key-item-title">1800</div>
+					<div class="dashboard-key-item-title"><count-to :end-val="1800"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月产量</p>
-					<div class="dashboard-key-item-title">15789.84</div>
+					<div class="dashboard-key-item-title"><count-to :end-val="15789.84"></count-to></div>
 				</div>
 			</div>
 		</div>
@@ -76,49 +74,62 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日销量</p>
-					<div class="dashboard-key-item-title">2300</div>
+					<div class="dashboard-key-item-title"><count-to :end-val="2300"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月销量</p>
-					<div class="dashboard-key-item-title">14756.66</div>
+					<div class="dashboard-key-item-title"><count-to :end-val="14756.66"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg3">
 					<p>水渣日销量</p>
-					<div class="dashboard-key-item-title">1603.25</div>
+					<div class="dashboard-key-item-title">
+						<count-to :end-val="1603.25"></count-to>
+					</div>
 				</div>
 				<div class="dashboard-key-item bg4">
 					<p>水渣月销量</p>
-					<div class="dashboard-key-item-title">13898.88</div>
+					<div class="dashboard-key-item-title">
+						<count-to :end-val="13898.88"></count-to>
+					</div>
 				</div>
 				<div class="dashboard-key-item bg1">
 					<p>当日回款（元）</p>
-					<div class="dashboard-key-item-title">3,000,000</div>
+					<div class="dashboard-key-item-title">
+						<count-to :end-val="2315.62" prefix='¥'></count-to>
+					</div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>当月回款（元）</p>
-					<div class="dashboard-key-item-title">35,000,000</div>
-				</div>
-				<div class="dashboard-key-item bg3 big">
-					<div>
-						<p>当日新签合同个数（个）</p>
-						<div class="dashboard-key-item-title">3</div>
-					</div>
-					<div>
-						<p>当日新签合同重量（kg）</p>
-						<div class="dashboard-key-item-title">5000</div>
+					<div class="dashboard-key-item-title">
+						<count-to :end-val="35000000" prefix='¥'></count-to>
 					</div>
 				</div>
-				<div class="dashboard-key-item bg4 big">
+				<div class="dashboard-key-item bg3">
 					<div>
-						<p>当月新签合同个数（个）</p>
-						<div class="dashboard-key-item-title">16</div>
-					</div>
-					<div>
-						<p>当月新签合同重量（kg）</p>
-						<div class="dashboard-key-item-title">97,591</div>
+						<p>当日新签合同</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="3"></count-to><span class="dashboard-key-item-title-unit">个</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="5000"></count-to><span class="dashboard-key-item-title-unit">吨</span>
+							</div>
+						</div>
 					</div>
 				</div>
-				
+				<div class="dashboard-key-item bg4">
+					<div>
+						<p>当月新签合同</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="12"></count-to><span class="dashboard-key-item-title-unit">个</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="125703"></count-to><span class="dashboard-key-item-title-unit">吨</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="dashboard-key-container" @click="JumpPage('Product')">
@@ -132,66 +143,83 @@
 				</div>
 			</div>
 			<div class="flex-between dashboard-key">
-				<div class="dashboard-key-item bg1 big">
+				<div class="dashboard-key-item bg1">
 					<div>
-						<p>当日矿粉到车数量(车)</p>
-						<div class="dashboard-key-item-title">30</div>
+						<p>当日矿粉到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="30"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="1800"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
 					</div>
-					<div>
-						<p>当日矿粉到车重量(kg)</p>
-						<div class="dashboard-key-item-title">1800</div>
-					</div>
+				</div>
 					
-				</div>
-				<div class="dashboard-key-item bg2 big">
+				<div class="dashboard-key-item bg2">
 					<div>
-						<p>当月矿粉到车数量(车)</p>
-						<div class="dashboard-key-item-title">300</div>
-					</div>
-					<div>
-						<p>当月矿粉到车重量(kg)</p>
-						<div class="dashboard-key-item-title">18000</div>
-					</div>
-				</div>
-				<div class="dashboard-key-item bg3 big">
-					<div>
-						<p>当日焦炭到车数量(车)</p>
-						<div class="dashboard-key-item-title">15</div>
-					</div>
-					<div>
-						<p>当日焦炭到车重量(kg)</p>
-						<div class="dashboard-key-item-title">500</div>
-					</div>
-					
-				</div>
-				<div class="dashboard-key-item bg4 big">
-					<div>
-						<p>当月焦炭到车数量(车)</p>
-						<div class="dashboard-key-item-title">150</div>
-					</div>
-					<div>
-						<p>当月焦炭到车重量(kg)</p>
-						<div class="dashboard-key-item-title">1600</div>
+						<p>当月矿粉到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="452"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="365240"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="dashboard-key-item bg1 big">
+				<div class="dashboard-key-item bg3">
 					<div>
-						<p>当日其它到车数量(车)</p>
-						<div class="dashboard-key-item-title">10</div>
-					</div>
-					<div>
-						<p>当日其它到车重量(kg)</p>
-						<div class="dashboard-key-item-title">400</div>
+						<p>当日焦炭到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="15"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="500"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="dashboard-key-item bg2 big">
+				<div class="dashboard-key-item bg4">
 					<div>
-						<p>当月其它到车数量(车)</p>
-						<div class="dashboard-key-item-title">120</div>
+						<p>当月焦炭到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="225"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="17800"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
 					</div>
+				</div>
+				<div class="dashboard-key-item bg1">
 					<div>
-						<p>当日其它到车重量(kg)</p>
-						<div class="dashboard-key-item-title">6760</div>
+						<p>当月其它到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="10"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="15302"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard-key-item bg2">
+					<div>
+						<p>当月其它到车</p>
+						<div class="dashboard-key-item-title">
+							<div class="left">
+								<count-to :end-val="132"></count-to><span class="dashboard-key-item-title-unit">车</span>
+							</div>
+							<div class="right">
+								<count-to :end-val="24815"></count-to><span class="dashboard-key-item-title-unit">kg</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -247,7 +275,7 @@
 	  .dashboard-key-item {
 		  width: calc(50% - 12px);
 		  height: 58px;
-		  padding: 15px 0 0 10px;
+		  padding: 6px 0 0 10px;
 		  line-height: 22px;
 		  margin-bottom: 4px;
 		  background-repeat: no-repeat;
@@ -262,8 +290,15 @@
 		  }
 		  .dashboard-key-item-title {
 			  color: rgb(26, 40, 60);
-			  font-size: 18px;
+			  margin-top: 3px;
+			  padding-right: 4px;
+			  font-size: 22px;
 			  font-weight: 600;
+			  .dashboard-key-item-title-unit {
+				color: grey;
+				font-size: 10px;
+				margin-left: 4px;
+			  }
 		  }
 		  &.bg1 {
 			  background-image: url('/src/assets/home/bg1.png');

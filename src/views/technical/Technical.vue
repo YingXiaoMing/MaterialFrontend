@@ -1,8 +1,9 @@
 
 
 <template>
-    <TechnicalHeader></TechnicalHeader>
+    
     <div class="technical-view">
+        <TechnicalHeader></TechnicalHeader>
         <div class="technical-content">
             <div class="t-width t_header_title">参数</div>
             <div class="t-start t_header_title">计划</div>

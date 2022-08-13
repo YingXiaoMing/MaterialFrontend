@@ -382,6 +382,11 @@ constantinople@^4.0.1:
     "@babel/parser" "^7.6.0"
     "@babel/types" "^7.6.1"
 
+core-js@^3.8.1:
+  version "3.24.1"
+  resolved "https://registry.npmmirror.com/core-js/-/core-js-3.24.1.tgz#cf7724d41724154010a6576b7b57d94c5d66e64f"
+  integrity sha512-0QTBSYSUZ6Gq21utGzkfITDylE8jWC9Ne1D2MrhvlsZBI1x39OdDIVbzSqtgMndIy6BlHxBXpMGqzZmnztg2rg==
+
 csstype@^2.6.8:
   version "2.6.20"
   resolved "https://registry.npmmirror.com/csstype/-/csstype-2.6.20.tgz#9229c65ea0b260cf4d3d997cb06288e36a8d6dda"
@@ -1326,6 +1331,11 @@ vscode-vue-languageservice@0.29.8:
     vscode-pug-languageservice "0.29.8"
     vscode-typescript-languageservice "0.29.8"
 
+vue-count-to@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.npmmirror.com/vue-count-to/-/vue-count-to-1.0.13.tgz#3e7573ea6e64c2b2972f64e0a2ab2e23c7590ff3"
+  integrity sha512-6R4OVBVNtQTlcbXu6SJ8ENR35M2/CdWt3Jmv57jOUM+1ojiFmjVGvZPH8DfHpMDSA+ITs+EW5V6qthADxeyYOQ==
+
 vue-demi@*:
   version "0.12.5"
   resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
@@ -1345,6 +1355,14 @@ vue-tsc@^0.29.8:
   dependencies:
     "@volar/shared" "0.29.8"
     vscode-vue-languageservice "0.29.8"
+
+vue3-count-to@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/vue3-count-to/-/vue3-count-to-1.1.2.tgz#a4f48947371f25b4edc940c482ddb89aaebb2462"
+  integrity sha512-C5AvlcGfyM4XvFqPDkni94rqGd5K/+RB+B4xv/1NQx3RrdC+GvXPFzeXW5hWL/jh8ehWLm4LITyK0eMKf4iJbg==
+  dependencies:
+    core-js "^3.8.1"
+    vue-count-to "^1.0.13"
 
 vue@^3.2.25:
   version "3.2.31"
