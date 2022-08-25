@@ -10,7 +10,7 @@
                     <van-field
                         v-model="username"
                         left-icon="manager"
-                        name="用户名"
+                        name="code"
                         label="用户名"
                         size="large"
                         placeholder="用户名"
@@ -20,7 +20,7 @@
                         v-model="password"
                         type="password"
                         left-icon="lock"
-                        name="密码"
+                        name="passWord"
                         label="密码"
                         size="large"
                         placeholder="密码"
@@ -38,20 +38,34 @@
     </div>
 </template>
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router'
-
-
+import { login } from '@/api/home'
+import { LocalStorage } from '@/uitls/storage'
 export default {
   setup() {
-    const username = ref('admin');
-    const password = ref('123456');
+    const username = ref('6666');
+    const password = ref('123123');
     const router = useRouter()
     const onSubmit = (values) => {
       console.log('submit', values);
-      router.push({
-        name: 'Home'
+      const param = {
+        code: values.code,
+        passWord: values.passWord
+      };
+
+
+      login(param).then((data) => {
+        console.log(data);
+        LocalStorage.setItem('token', data.data.token);
+        router.push({
+            name: 'Home'
+        });
       });
+
+
+
+    
     };
 
     return {

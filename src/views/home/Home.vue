@@ -1,6 +1,9 @@
 <script setup lang="ts">
 	import { computed, reactive, ref, toRefs } from 'vue'
 	import { useRouter } from 'vue-router'
+	import { getpigirondailyoutput } from '@/api/home'
+
+
 	import logo from '@/assets/me/banner.jpg'
 	import d1 from '@/assets/home/d1.png'
 	import d2 from '@/assets/home/d2.png'
@@ -18,6 +21,11 @@
 			name
 		});
 	}
+	getpigirondailyoutput().then((res) => {
+		console.log(res);
+	})
+
+
 	const useShowList = () => {
 		const state = reactive({
 			list: [
@@ -239,7 +247,6 @@
 		
 	</div>
 </template>
-
 
 
 <style lang="scss" scoped>

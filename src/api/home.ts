@@ -1,5 +1,12 @@
 import axiosInstance, { AxiosResponseProps } from '@/uitls/request'
 
-export const getList = (params: any) => {
-	return axiosInstance.get("/common/code/logisticsInfo/getOrderByPhone", { params: params || {} });
+
+
+export const login = (params: any) => {
+	return axiosInstance.post('/accountmanage/login', params);
+}
+
+
+export const getpigirondailyoutput = () => {
+	return axiosInstance.get('/car/getpigirondailyoutput');
 }

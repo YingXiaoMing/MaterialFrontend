@@ -4,6 +4,8 @@
 */ 
 import * as store from "@/store/index";
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, Method } from "axios";
+import { LocalStorage } from '@/uitls/storage'
+
 export interface AxiosResponseProps {
     code?: number;
     status?: number;
@@ -38,16 +40,27 @@ class HttpRequest {
             //所有请求都加载完才让加载提示消失
             if (requestList.every(item => !item.isLoading)) store.commit("changeIsLoading", false);
         };
+        instance.interceptors.request.use(
+            config => {
+                config.headers.Authorization = LocalStorage.getItem('token')
+                console.log(config.auth);
+                return config;
+            }
+        )
         instance.interceptors.response.use(
             response => {
-                setLoadingToFalse(response);
-                return response.data;
+                // setLoadingToFalse(response);
+                if (response.status == 200)
+                {
+                    return response.data;
+                }
+                // console.log(response);
             },
             error => {
                 if (error.response.status == 301) {
                     store.commit("changeLoginModalVisible", true);
                 }
-                setLoadingToFalse(error);
+                // setLoadingToFalse(error);
                 return Promise.reject(error.response?.data);
             }
         );
