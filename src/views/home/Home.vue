@@ -1,8 +1,7 @@
 <script setup lang="ts">
 	import { computed, reactive, ref, toRefs } from 'vue'
 	import { useRouter } from 'vue-router'
-	import { getpigirondailyoutput } from '@/api/home'
-
+	import { HomeData } from './model'
 
 	import logo from '@/assets/me/banner.jpg'
 	import d1 from '@/assets/home/d1.png'
@@ -21,9 +20,26 @@
 			name
 		});
 	}
-	getpigirondailyoutput().then((res) => {
-		console.log(res);
-	})
+
+	const pageData = reactive<HomeData>({
+		pigIronDailyOutput: 0,
+		pigIronMonthlyOutput: 0,
+		pigIronDailySales: 0,
+		pigIronMonthlySales: 0,
+		waterDregsDailySales: 0,
+		waterDregsMonthlySales: 0,
+		dailyXSHK: 0,
+		monthlyXSHK: 0,
+		dailyContractNum: 0,
+		monthlyContractNum: 0,
+		mineralPowderDailyArrive: 0,
+		mineralPowderMonthlyArrive: 0,
+		cokeDailyArrive: 0,
+		cokeMonthlyArrive: 0,
+		otherDailyArrive: 0,
+		otherMonthlyArrive: 0
+	});
+
 
 
 	const useShowList = () => {
@@ -61,11 +77,11 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日产量</p>
-					<div class="dashboard-key-item-title"><count-to :end-val="1800"></count-to></div>
+					<div class="dashboard-key-item-title"><count-to :end-val="pageData.pigIronDailyOutput"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月产量</p>
-					<div class="dashboard-key-item-title"><count-to :end-val="15789.84"></count-to></div>
+					<div class="dashboard-key-item-title"><count-to :end-val="pageData.pigIronMonthlyOutput"></count-to></div>
 				</div>
 			</div>
 		</div>
@@ -82,34 +98,34 @@
 			<div class="flex-between dashboard-key">
 				<div class="dashboard-key-item bg1">
 					<p>生铁日销量</p>
-					<div class="dashboard-key-item-title"><count-to :end-val="2300"></count-to></div>
+					<div class="dashboard-key-item-title"><count-to :end-val="pageData.pigIronDailySales"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>生铁月销量</p>
-					<div class="dashboard-key-item-title"><count-to :end-val="14756.66"></count-to></div>
+					<div class="dashboard-key-item-title"><count-to :end-val="pageData.pigIronMonthlySales"></count-to></div>
 				</div>
 				<div class="dashboard-key-item bg3">
 					<p>水渣日销量</p>
 					<div class="dashboard-key-item-title">
-						<count-to :end-val="1603.25"></count-to>
+						<count-to :end-val="pageData.waterDregsDailySales"></count-to>
 					</div>
 				</div>
 				<div class="dashboard-key-item bg4">
 					<p>水渣月销量</p>
 					<div class="dashboard-key-item-title">
-						<count-to :end-val="13898.88"></count-to>
+						<count-to :end-val="pageData.waterDregsMonthlySales"></count-to>
 					</div>
 				</div>
 				<div class="dashboard-key-item bg1">
 					<p>当日回款（元）</p>
 					<div class="dashboard-key-item-title">
-						<count-to :end-val="2315.62" prefix='¥'></count-to>
+						<count-to :end-val="pageData.dailyXSHK" prefix='¥'></count-to>
 					</div>
 				</div>
 				<div class="dashboard-key-item bg2">
 					<p>当月回款（元）</p>
 					<div class="dashboard-key-item-title">
-						<count-to :end-val="35000000" prefix='¥'></count-to>
+						<count-to :end-val="pageData.monthlyXSHK" prefix='¥'></count-to>
 					</div>
 				</div>
 				<div class="dashboard-key-item bg3">
@@ -117,7 +133,7 @@
 						<p>当日新签合同</p>
 						<div class="dashboard-key-item-title">
 							<div class="left">
-								<count-to :end-val="3"></count-to><span class="dashboard-key-item-title-unit">个</span>
+								<count-to :end-val="pageData.dailyContractNum"></count-to><span class="dashboard-key-item-title-unit">个</span>
 							</div>
 							<div class="right">
 								<count-to :end-val="5000"></count-to><span class="dashboard-key-item-title-unit">吨</span>
@@ -130,10 +146,10 @@
 						<p>当月新签合同</p>
 						<div class="dashboard-key-item-title">
 							<div class="left">
-								<count-to :end-val="12"></count-to><span class="dashboard-key-item-title-unit">个</span>
+								<count-to :end-val="pageData.monthlyContractNum"></count-to><span class="dashboard-key-item-title-unit">个</span>
 							</div>
 							<div class="right">
-								<count-to :end-val="125703"></count-to><span class="dashboard-key-item-title-unit">吨</span>
+								<count-to :end-val="300000000"></count-to><span class="dashboard-key-item-title-unit">吨</span>
 							</div>
 						</div>
 					</div>

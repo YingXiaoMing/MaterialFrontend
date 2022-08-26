@@ -24,7 +24,6 @@
                         label="密码"
                         size="large"
                         placeholder="密码"
-                        :rules="[{ required: true, message: '请填写密码' }]"
                     />
                 </van-cell-group>
                 <div style="margin: 16px;">
@@ -53,15 +52,18 @@ export default {
         code: values.code,
         passWord: values.passWord
       };
-
-
-      login(param).then((data) => {
-        console.log(data);
-        LocalStorage.setItem('token', data.data.token);
-        router.push({
+      // 暂时屏蔽掉
+      router.push({
             name: 'Home'
         });
-      });
+
+      // login(param).then((data) => {
+      //   console.log(data);
+      //   LocalStorage.setItem('token', data.data.token);
+      //   router.push({
+      //       name: 'Home'
+      //   });
+      // });
 
 
 

@@ -7,6 +7,8 @@ export const login = (params: any) => {
 }
 
 
-export const getpigirondailyoutput = () => {
-	return axiosInstance.get('/car/getpigirondailyoutput');
+
+
+export const getHomeData = () => {
+	return axiosInstance.get('/home/getcomprehensiveresult');
 }

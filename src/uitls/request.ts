@@ -57,9 +57,9 @@ class HttpRequest {
                 // console.log(response);
             },
             error => {
-                if (error.response.status == 301) {
-                    store.commit("changeLoginModalVisible", true);
-                }
+                // if (error.response.status == 301) {
+                //     store.commit("changeLoginModalVisible", true);
+                // }
                 // setLoadingToFalse(error);
                 return Promise.reject(error.response?.data);
             }
