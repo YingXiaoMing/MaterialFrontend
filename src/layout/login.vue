@@ -53,17 +53,17 @@ export default {
         passWord: values.passWord
       };
       // 暂时屏蔽掉
-      router.push({
+    //   router.push({
+    //         name: 'Home'
+    //     });
+
+      login(param).then((data) => {
+        console.log(data);
+        LocalStorage.setItem('token', data.data.token);
+        router.push({
             name: 'Home'
         });
-
-      // login(param).then((data) => {
-      //   console.log(data);
-      //   LocalStorage.setItem('token', data.data.token);
-      //   router.push({
-      //       name: 'Home'
-      //   });
-      // });
+      });
 
 
 
